@@ -1,4 +1,4 @@
 # EscapeLab
 
-## Special Thanks To.
-### Sehoon Lee, Sujin Park
+## Special Thanks To. 
+Sehoon Lee, Sujin Park
