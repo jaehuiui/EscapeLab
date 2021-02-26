@@ -8,7 +8,7 @@ public class PoliceTracker : MonoBehaviour
     Transform target;
     public Vector3 targetDirection;
 
-    public int speed;
+    public float speed;
 
     public int horizontalMove = 1;
     public int verticalMove = 1;
@@ -45,7 +45,7 @@ public class PoliceTracker : MonoBehaviour
         chaseSpeed = 0.05f;
 
         float distance = Vector3.Distance(target.position, transform.position);
-        if(distance <= 4.2f)
+        if(distance <= 4.1f)
         {
             this.transform.position = new Vector2(transform.position.x + (targetDirection.x * chaseSpeed),
                                                    transform.position.y + (targetDirection.y * chaseSpeed));

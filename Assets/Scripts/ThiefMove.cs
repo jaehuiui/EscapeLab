@@ -55,6 +55,7 @@ public class ThiefMove : MonoBehaviour
     public bool mapChanged = false;
 
     public Text keyLeft;
+    public Text currentPlace;
 
     public bool isChased;
 
@@ -70,8 +71,12 @@ public class ThiefMove : MonoBehaviour
         animator = gameObject.GetComponentInChildren<Animator>();
 
         bgm = this.GetComponent<AudioSource>();
+
         keyLeft = GameObject.Find("KeyScore").GetComponent<Text>();
         keyLeft.text = ScoreManager.leftkey().ToString() + " left";
+
+        currentPlace = GameObject.Find("Current Place").GetComponent<Text>();
+        currentPlace.text = "1F 본관";
         
         sceneID = SceneManager.GetActiveScene().buildIndex;
 
@@ -84,9 +89,9 @@ public class ThiefMove : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        randomKey1 = Random.Range(0, 4);
-        randomKey2 = Random.Range(0, 4);
-        randomKey3 = Random.Range(0, 4);
+        randomKey1 = Random.Range(0, 8);
+        randomKey2 = Random.Range(0, 8);
+        randomKey3 = Random.Range(0, 8);
     }
 
     void Awake() {
@@ -111,6 +116,9 @@ public class ThiefMove : MonoBehaviour
 
 
         sceneID = SceneManager.GetActiveScene().buildIndex;
+
+        if(!bgm.isPlaying)
+            Play_zero();
 
         if(sceneID == 1 || sceneID == 2)
         {
@@ -306,7 +314,7 @@ public class ThiefMove : MonoBehaviour
                 }
             }
         }
-        else if(sceneID == 8 || sceneID == 16 | sceneID == 18)
+        else if(sceneID == 8 || sceneID == 15 || sceneID == 16 || sceneID == 18)
         {
             Debug.Log("Welcome");
             enemy201 = GameObject.Find("Police201").GetComponent<Transform>();

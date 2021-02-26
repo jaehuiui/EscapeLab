@@ -11,8 +11,8 @@ public class Dialog : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dialog = GameObject.Find("Dialog").GetComponent<Image>();
-        text = GameObject.Find("Text").GetComponent<Text>();
+        dialog = GameObject.Find("DialogExit").GetComponent<Image>();
+        text = GameObject.Find("How to Exit").GetComponent<Text>();
         thePlayer = FindObjectOfType<ThiefMove>();
         dialog.enabled = false;
         text.enabled = false;

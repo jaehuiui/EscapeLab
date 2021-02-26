@@ -6,66 +6,66 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Start.unity
+    path: Assets/Scenes/Menu/Start.unity
     guid: f1b2f06dd66494aa399706d381e60e8d
   - enabled: 1
-    path: Assets/Scenes/1F Scene.unity
+    path: Assets/Scenes/1F/1F Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/2F Scene.unity
+    path: Assets/Scenes/2F/2F Scene.unity
     guid: dc6bead8f1de84f409d4fdf987dd48e2
   - enabled: 1
-    path: Assets/Scenes/GameOver Scene.unity
+    path: Assets/Scenes/Menu/GameOver Scene.unity
     guid: 116cf6464d715418e917b96838a989f9
   - enabled: 1
-    path: Assets/Scenes/Main Hall.unity
+    path: Assets/Scenes/1F/Main Hall.unity
     guid: 55f464c8cf8fe49dda32d6643bfb8b33
   - enabled: 1
-    path: Assets/Scenes/Room Maze.unity
+    path: Assets/Scenes/2F/Room Maze.unity
     guid: 09ef06570a12445cfbef179153b095a7
   - enabled: 1
-    path: Assets/Scenes/Room1 1F.unity
+    path: Assets/Scenes/1F/Room1 1F.unity
     guid: 308c222fdcd224f43a31bc3346d71fbd
   - enabled: 1
-    path: Assets/Scenes/Warehouse1.unity
+    path: Assets/Scenes/1F/Warehouse1.unity
     guid: 7d1693279bc9f49b98ac86f1edd0ad5b
   - enabled: 1
-    path: Assets/Scenes/Warehouse2.unity
+    path: Assets/Scenes/2F/Warehouse2.unity
     guid: 421b9097319ba49e49982edded2cee04
   - enabled: 1
-    path: Assets/Scenes/Toliet1.unity
+    path: Assets/Scenes/1F/Toliet1.unity
     guid: 9576da294b095442f9c013254c3ca206
   - enabled: 1
-    path: Assets/Scenes/Toliet2.unity
+    path: Assets/Scenes/1F/Toliet2.unity
     guid: d2edbfcb1bcbe4c20867767a3fd526aa
   - enabled: 1
-    path: Assets/Scenes/Toliet3.unity
+    path: Assets/Scenes/2F/Toliet3.unity
     guid: 23bcea37df52d4becaa1f68bdc4f1486
   - enabled: 1
-    path: Assets/Scenes/Toliet4.unity
+    path: Assets/Scenes/2F/Toliet4.unity
     guid: a2eca47424b864d80aa5b21bfbe5d836
   - enabled: 1
-    path: Assets/Scenes/Room2 1F.unity
+    path: Assets/Scenes/1F/Room2 1F.unity
     guid: 0098483c312094024867f428cbb7bf79
   - enabled: 1
-    path: Assets/Scenes/Room3 1F.unity
+    path: Assets/Scenes/1F/Room3 1F.unity
     guid: 8655b5d2202f44bb18be242d04d94fcc
   - enabled: 1
-    path: Assets/Scenes/Terrace1 2F.unity
+    path: Assets/Scenes/2F/Terrace1 2F.unity
     guid: 6147713906c3a41e593cb6dd8336fb75
   - enabled: 1
-    path: Assets/Scenes/Hallway 1F.unity
+    path: Assets/Scenes/1F/Hallway 1F.unity
     guid: 877bb86a26bde4ccd915b4916b8d10f8
   - enabled: 1
-    path: Assets/Scenes/Hallway 2F.unity
+    path: Assets/Scenes/2F/Hallway 2F.unity
     guid: 5b9845880b22e4da49bd5812dcff2a35
   - enabled: 1
-    path: Assets/Scenes/Lab1.unity
+    path: Assets/Scenes/2F/Lab1.unity
     guid: 64a1fc7b3073a4dd6b48e8ed2023a61b
   - enabled: 1
-    path: Assets/Scenes/Ending.unity
+    path: Assets/Scenes/Menu/Ending.unity
     guid: 0703fb0de22de42cba3b65b7d0c7089a
   - enabled: 1
-    path: Assets/Scenes/Game Clear.unity
+    path: Assets/Scenes/Menu/Game Clear.unity
     guid: f513d705197c54cc1befb18c17d021af
   m_configObjects: {}
