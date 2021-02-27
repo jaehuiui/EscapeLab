@@ -41,6 +41,8 @@ public class ThiefMove : MonoBehaviour
     public bool getKey1 = false;
     public bool getKey2 = false;
     public bool getKey3 = false;
+    public bool getKey4 = false;
+    public bool getKey5 = false;
 
     public bool isDialog = false;
 
@@ -56,6 +58,7 @@ public class ThiefMove : MonoBehaviour
 
     public Text keyLeft;
     public Text currentPlace;
+    public Text currentLevel;
 
     public bool isChased;
 
@@ -65,6 +68,8 @@ public class ThiefMove : MonoBehaviour
     public int randomKey1;
     public int randomKey2;
     public int randomKey3;
+    public int randomKey4;
+    public int randomKey5;
 
     void Start(){
 
@@ -77,7 +82,18 @@ public class ThiefMove : MonoBehaviour
 
         currentPlace = GameObject.Find("Current Place").GetComponent<Text>();
         currentPlace.text = "1F 본관";
-        
+
+        currentLevel = GameObject.Find("Level").GetComponent<Text>();
+        if(LevelManager.getLevel() == 0)
+        {
+            currentLevel.text = "난이도 : Normal";
+        }
+        else
+        {
+            currentLevel.text = "난이도 : Expert";
+            speed += 0.5f;
+        }
+
         sceneID = SceneManager.GetActiveScene().buildIndex;
 
         if(instance == null){
@@ -89,13 +105,27 @@ public class ThiefMove : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        randomKey1 = Random.Range(0, 8);
-        randomKey2 = Random.Range(0, 8);
-        randomKey3 = Random.Range(0, 8);
+        if(LevelManager.getLevel() == 0)
+        {
+            randomKey1 = Random.Range(0, 8);
+            randomKey2 = Random.Range(0, 8);
+            randomKey3 = Random.Range(0, 8);
+            randomKey4 = -1;
+            randomKey5 = -1;
+        }
+        else
+        {
+            randomKey1 = Random.Range(0, 8);
+            randomKey2 = Random.Range(0, 8);
+            randomKey3 = Random.Range(0, 8);
+            randomKey4 = Random.Range(0, 6);
+            randomKey5 = Random.Range(0, 6);
+        }
+        
     }
 
-    void Awake() {
-
+    void Awake()
+    {
         rigid = GetComponent<Rigidbody2D>();
     }
 
@@ -119,6 +149,9 @@ public class ThiefMove : MonoBehaviour
 
         if(!bgm.isPlaying)
             Play_zero();
+
+        
+
 
         if(sceneID == 1 || sceneID == 2)
         {

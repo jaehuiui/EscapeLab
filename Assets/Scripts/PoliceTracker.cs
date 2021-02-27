@@ -19,6 +19,8 @@ public class PoliceTracker : MonoBehaviour
 
     public bool isChasing = false;
 
+    float chaseArea;
+
     // Start is called before the first frame update
 
     
@@ -26,6 +28,11 @@ public class PoliceTracker : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+        if(LevelManager.getLevel() == 1)
+        {
+            speed += 0.2f;
+        }
     }
 
     void Awake()
@@ -42,10 +49,19 @@ public class PoliceTracker : MonoBehaviour
     {
         targetDirection = (target.position - transform.position).normalized;
 
-        chaseSpeed = 0.05f;
+        if(LevelManager.getLevel() == 0)
+        {
+            chaseSpeed = 0.05f;
+            chaseArea = 4.1f;
+        }
+        else
+        {
+             chaseSpeed = 0.06f;
+             chaseArea = 4.3f;
+        }
 
         float distance = Vector3.Distance(target.position, transform.position);
-        if(distance <= 4.1f)
+        if(distance <= chaseArea)
         {
             this.transform.position = new Vector2(transform.position.x + (targetDirection.x * chaseSpeed),
                                                    transform.position.y + (targetDirection.y * chaseSpeed));
