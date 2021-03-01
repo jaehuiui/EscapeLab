@@ -23,6 +23,13 @@ public class ScoreManager : MonoBehaviour
 
     public static int leftkey()
     {
-        return (3 - score);
+        if(LevelManager.getLevel() == 0)
+        {
+            return (3 - score);
+        }
+        else
+        {
+            return (5 - score);
+        }
     }
 }
