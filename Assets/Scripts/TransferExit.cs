@@ -21,20 +21,40 @@ public class TransferExit : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Thief")
-        {
-            if (ScoreManager.getScore() < 3)
+        {   
+            if(LevelManager.getLevel() == 0)
             {
-                Debug.Log("Current Score is " + ScoreManager.getScore());
-                thePlayer.isDialog = true;
+                if (ScoreManager.getScore() < 3)
+                {
+                    Debug.Log("Current Score is " + ScoreManager.getScore());
+                    thePlayer.isDialog = true;
+                }
+                else
+                {
+                    thePlayer.gameclear = true;
+                    Debug.Log("Game Clear");
+                    thePlayer.currentMapName = transferMapName;
+                    thePlayer.transferPointName = transferPointName;
+                    thePlayer.mapChanged = true;
+                    SceneManager.LoadScene(transferMapName);
+                }
             }
-            else
+            else 
             {
-                thePlayer.gameclear = true;
-                Debug.Log("Game Clear");
-                thePlayer.currentMapName = transferMapName;
-                thePlayer.transferPointName = transferPointName;
-                thePlayer.mapChanged = true;
-                SceneManager.LoadScene(transferMapName);
+                if (ScoreManager.getScore() < 5)
+                {
+                    Debug.Log("Current Score is " + ScoreManager.getScore());
+                    thePlayer.isDialog = true;
+                }
+                else
+                {
+                    thePlayer.gameclear = true;
+                    Debug.Log("Game Clear");
+                    thePlayer.currentMapName = transferMapName;
+                    thePlayer.transferPointName = transferPointName;
+                    thePlayer.mapChanged = true;
+                    SceneManager.LoadScene(transferMapName);
+                }
             }
 
         }
@@ -45,10 +65,21 @@ public class TransferExit : MonoBehaviour
     {
         if (collision.gameObject.name == "Thief")
         {
-            if (ScoreManager.getScore() < 3)
+            if(LevelManager.getLevel() == 0)
             {
-                thePlayer.isDialog = false;
+                if (ScoreManager.getScore() < 3)
+                {
+                    thePlayer.isDialog = false;
+                }
             }
+            else
+            {
+                if (ScoreManager.getScore() < 5)
+                {
+                    thePlayer.isDialog = false;
+                }
+            }
+            
         }
     }
 }
